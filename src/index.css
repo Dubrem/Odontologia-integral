@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: #1E40AF;
+  --color-accent: #06B6D4;
+  --color-light: #EFF6FF;
+  --color-dark: #0F172A;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-dark);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+/* Progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #1E40AF, #06B6D4);
+  z-index: 9999;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+/* GPU layer hint — applied only during active animation */
+.will-animate {
+  will-change: transform, opacity;
+}
+
+/* Clip-path section divider */
+.clip-wave {
+  clip-path: ellipse(100% 55% at 50% 44%);
+}
+
+/* Lazy image placeholder */
+.img-lazy {
+  filter: blur(8px);
+  transition: filter 0.4s ease;
+}
+.img-lazy.loaded {
+  filter: blur(0);
+}
+
+/* Stat counter visibility */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
